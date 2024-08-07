@@ -1,0 +1,71 @@
+backup:
+  cron: 0 * * * *
+  enable: false
+cache:
+  enable: false
+  ttl_seconds: 300
+cpus: 1
+# ext_helpers: ./custom_handlebar.json
+# ext_data_source:
+#   pg:
+#     database: postgres
+#     host: localhost
+#     password: password
+#     port: 5432
+#     user: root
+injection:
+  enable: false
+loglevel: debug
+monitoring:
+  port: 5555
+origins:
+  - http://127.0.0.1:3000
+  - http://localhost:3000
+protocols:
+  grpc:
+    enable: false
+    grpc_tls: false
+    host: 0.0.0.0
+    mocks_dir: ./grpc/mocks
+    port: 4312
+    protos_dir: ./grpc/protos
+  http:
+    enable: true
+    mocks_dir: ./http/mocks
+    port: 8080
+  http2:
+    enable: false
+    port: 8081
+  https:
+    enable: false
+    port: 8443
+  soap:
+    enable: false
+    mocks_dir: ./soap/mocks
+    port: 8100
+    services:
+      - path: /countryinfo
+        wsdl: ./soap/countryservice.wsdl
+  thrift:
+    enable: false
+    mocks_dir: ./thrift/mocks
+    services:
+      - handlers:
+          - add
+          - substract
+          - ping
+        port: 9999
+        service: /opt/gen-nodejs/Calculator
+  ws:
+    enable: false
+    mocks_dir: ./ws/mocks
+    port: 8082
+ssl:
+  cert: ./certs/server.cert
+  key: ./certs/server.key
+  root_cert: ./certs/root.cert
+validation:
+  enable: true
+  schemas:
+    - url: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.json
+      type: OpenApi

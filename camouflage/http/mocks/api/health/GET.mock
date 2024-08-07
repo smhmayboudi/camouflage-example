@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: b3,cache-control,content-transfer-encoding,content-type,grpc-timeout,keep-alive,user-agent,x-accept-content-transfer-encoding,x-accept-response-streaming,x-grpc-web,x-user-agent
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: DELETE,GET,OPTIONS,PATCH,POST,PUT
+Access-Control-Allow-Origin: *
+Access-Control-EXPOSE-Headers: b3,grpc-message,grpc-status
+Access-Control-Max-Age: 1728000
+Content-Type: application/json; charset=utf-8
+Date: {{now format='ddd, DD MMM YYYY hh:mm:ss' offset='-4:30 hours'}} GMT
+
+{"success":"true"}

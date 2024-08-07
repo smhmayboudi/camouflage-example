@@ -1,0 +1,116 @@
+2024-08-07 17:18:24 [32minfo[39m: [58] Master Started 
+2024-08-07 17:18:24 [32minfo[39m: Cluster metrics server listening to 5555, metrics exposed on http://localhost:5555/metrics . Set a negative value for config.monitoring.port to enable monitoring  
+2024-08-07 17:18:25 [34mdebug[39m: {
+  "backup": {
+    "cron": "0 * * * *",
+    "enable": false
+  },
+  "cache": {
+    "enable": false,
+    "ttl_seconds": 300
+  },
+  "cpus": 1,
+  "injection": {
+    "enable": false
+  },
+  "loglevel": "debug",
+  "monitoring": {
+    "port": 5555
+  },
+  "origins": [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000"
+  ],
+  "protocols": {
+    "grpc": {
+      "enable": false,
+      "grpc_tls": false,
+      "host": "0.0.0.0",
+      "mocks_dir": "./grpc/mocks",
+      "port": 4312,
+      "protos_dir": "./grpc/protos"
+    },
+    "http": {
+      "enable": true,
+      "mocks_dir": "./http/mocks",
+      "port": 8080
+    },
+    "http2": {
+      "enable": false,
+      "port": 8081
+    },
+    "https": {
+      "enable": false,
+      "port": 8443
+    },
+    "soap": {
+      "enable": false,
+      "mocks_dir": "./soap/mocks",
+      "port": 8100,
+      "services": [
+        {
+          "path": "/countryinfo",
+          "wsdl": "./soap/countryservice.wsdl"
+        }
+      ]
+    },
+    "thrift": {
+      "enable": false,
+      "mocks_dir": "./thrift/mocks",
+      "services": [
+        {
+          "handlers": [
+            "add",
+            "substract",
+            "ping"
+          ],
+          "port": 9999,
+          "service": "/opt/gen-nodejs/Calculator"
+        }
+      ]
+    },
+    "ws": {
+      "enable": false,
+      "mocks_dir": "./ws/mocks",
+      "port": 8082
+    }
+  },
+  "ssl": {
+    "cert": "./certs/server.cert",
+    "key": "./certs/server.key",
+    "root_cert": "./certs/root.cert"
+  },
+  "validation": {
+    "enable": true,
+    "schemas": [
+      {
+        "url": "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.json",
+        "type": "OpenApi"
+      }
+    ]
+  },
+  "ext_helpers": null
+} 
+2024-08-07 17:18:25 [32minfo[39m: CORS enabled for http://127.0.0.1:3000, http://localhost:3000 
+2024-08-07 17:18:25 [32minfo[39m: [81] Worker started 
+2024-08-07 17:18:25 [32minfo[39m: Handlebar helpers registration started 
+2024-08-07 17:18:25 [33mwarn[39m: Code Injection is disabled. Helpers such as code, inject, pg, csv and functionalities such as external helpers, will not work. 
+2024-08-07 17:18:25 [32minfo[39m: Handlebar helpers registration completed 
+2024-08-07 17:18:25 [32minfo[39m: No middleware injection. 
+2024-08-07 17:18:25 [32minfo[39m: Worker sharing HTTP server at http://localhost:8080 ⛳ 
+2024-08-07 17:18:45 [31merror[39m: No suitable mock file found: /camouflage/http/mocks/__/GET.mock 
+2024-08-07 17:18:45 [34mdebug[39m: No custom global override for default response. Sending default Camouflage response. 
+2024-08-07 17:18:45 [33mwarn[39m: HTTP GET /health/api :: Query Parameters: {} | Request Headers {"host":"localhost:8080","user-agent":"curl/8.6.0","accept":"*/*"} | Request Body {} 
+2024-08-07 17:18:45 [32minfo[39m: OpenApi Swagger Petstore (v1.0.0) validation schema loaded from https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.json. 
+2024-08-07 17:18:50 [34mdebug[39m: Using new line as \n 
+2024-08-07 17:18:50 [34mdebug[39m: Response Status set to 200 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Access-Control-Allow-Headers:  b3,cache-control,content-transfer-encoding,content-type,grpc-timeout,keep-alive,user-agent,x-accept-content-transfer-encoding,x-accept-response-streaming,x-grpc-web,x-user-agent 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Access-Control-Allow-Credentials:  true 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Access-Control-Allow-Methods:  DELETE,GET,OPTIONS,PATCH,POST,PUT 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Access-Control-Allow-Origin:  * 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Access-Control-EXPOSE-Headers:  b3,grpc-message,grpc-status 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Access-Control-Max-Age:  1728000 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Content-Type:  application/json; charset=utf-8 
+2024-08-07 17:18:50 [34mdebug[39m: Headers Set Date:  Wed, 07 Aug 2024 12:48:50 GMT 
+2024-08-07 17:18:50 [34mdebug[39m: Generated Response {"success":"true"} 
+2024-08-07 17:18:50 [34mdebug[39m: HTTP GET /api/health :: Query Parameters: {} | Request Headers {"host":"localhost:8080","user-agent":"curl/8.6.0","accept":"*/*"} | Request Body {} 
